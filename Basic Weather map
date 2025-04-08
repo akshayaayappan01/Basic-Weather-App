@@ -1,0 +1,28 @@
+!pip install requests
+import requests
+import requests
+
+API_KEY = "8b7d515fc29ada5d6a80a54ce590ce60"
+BASE_URL = "http://api.weatherstack.com/current"
+
+city = input("Enter city name: ")
+
+params = {
+    "access_key": API_KEY,
+    "query": city
+}
+
+response = requests.get(BASE_URL, params=params)
+data = response.json()
+
+# Handle potential errors
+if "error" in data:
+    print("City not found or an error occurred.")
+    print("Error:", data["error"]["info"])
+else:
+    weather = data["current"]["weather_descriptions"][0]
+    temp = data["current"]["temperature"]
+    humidity = data["current"]["humidity"]
+    print(f"Weather: {weather}")
+    print(f"Temperature: {temp}°C")
+    print(f"Humidity: {humidity}%")
