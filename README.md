@@ -11,4 +11,4 @@ This project involves developing a Python-based weather application. The beginne
 Output:
 
 
-
+![Image](https://github.com/user-attachments/assets/3f554efc-99ff-42a2-988b-10cc3f51619a)
